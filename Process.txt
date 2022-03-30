@@ -1,0 +1,3 @@
+jupyter-book create mynewbook/
+
+jupyter-book build mynewbook
