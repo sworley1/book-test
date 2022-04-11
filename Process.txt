@@ -1,3 +1,8 @@
 jupyter-book create mynewbook/
 
 jupyter-book build mynewbook
+
+cd mynewbook/ 
+
+ghp-import -n -p -f _build/html # this should build the book and publish to github pages
+
