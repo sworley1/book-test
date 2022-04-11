@@ -308,7 +308,44 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="content-with-notebooks">
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+
+<span class="n">hide_me</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&lt;script&gt;</span>
+<span class="s1">code_show=true; </span>
+<span class="s1">function code_toggle() {</span>
+<span class="s1">  if (code_show) {</span>
+<span class="s1">    $(&#39;div.input&#39;).each(function(id) {</span>
+<span class="s1">      el = $(this).find(&#39;.cm-variable:first&#39;);</span>
+<span class="s1">      if (id == 0 || el.text() == &#39;hide_me&#39;) {</span>
+<span class="s1">        $(this).hide();</span>
+<span class="s1">      }</span>
+<span class="s1">    });</span>
+<span class="s1">    $(&#39;div.output_prompt&#39;).css(&#39;opacity&#39;, 0);</span>
+<span class="s1">  } else {</span>
+<span class="s1">    $(&#39;div.input&#39;).each(function(id) {</span>
+<span class="s1">      $(this).show();</span>
+<span class="s1">    });</span>
+<span class="s1">    $(&#39;div.output_prompt&#39;).css(&#39;opacity&#39;, 1);</span>
+<span class="s1">  }</span>
+<span class="s1">  code_show = !code_show</span>
+<span class="s1">} </span>
+<span class="s1">$( document ).ready(code_toggle);</span>
+<span class="s1">&lt;/script&gt;</span>
+<span class="s1">&lt;form action=&quot;javascript:code_toggle()&quot;&gt;&lt;input style=&quot;opacity:0&quot; type=&quot;submit&quot; value=&quot;Click here to toggle on/off the raw code.&quot;&gt;&lt;/form&gt;&#39;&#39;&#39;</span><span class="p">)</span>
+<span class="n">hide_me</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="content-with-notebooks">
 <h1>Content with notebooks<a class="headerlink" href="#content-with-notebooks" title="Permalink to this headline">¶</a></h1>
 <p>You can also create content with Jupyter Notebooks. This means that you can include
 code blocks and their outputs in your book.</p>
@@ -353,24 +390,9 @@ For example, here’s some sample Matplotlib code:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
-<span class="kn">import</span> <span class="nn">IPython.core.display</span> <span class="k">as</span> <span class="nn">di</span> <span class="c1"># Example: di.display_html(&#39;&lt;h3&gt;%s:&lt;/h3&gt;&#39; % str, raw=True)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hide_me</span>
 
-<span class="c1"># This line will hide code by default when the notebook is exported as HTML</span>
-<span class="n">di</span><span class="o">.</span><span class="n">display_html</span><span class="p">(</span><span class="s1">&#39;&lt;script&gt;jQuery(function() {if (jQuery(&quot;body.notebook_app&quot;).length == 0) { jQuery(&quot;.input_area&quot;).toggle(); jQuery(&quot;.prompt&quot;).toggle();}});&lt;/script&gt;&#39;</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># This line will add a button to toggle visibility of code blocks, for use with the HTML export version</span>
-<span class="n">di</span><span class="o">.</span><span class="n">display_html</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;&lt;button onclick=&quot;jQuery(&#39;.input_area&#39;).toggle(); jQuery(&#39;.prompt&#39;).toggle();&quot;&gt;Toggle code&lt;/button&gt;&#39;&#39;&#39;</span><span class="p">,</span> <span class="n">raw</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><script>jQuery(function() {if (jQuery("body.notebook_app").length == 0) { jQuery(".input_area").toggle(); jQuery(".prompt").toggle();}});</script></div><div class="output text_html"><button onclick="jQuery('.input_area').toggle(); jQuery('.prompt').toggle();">Toggle code</button></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fixing random state for reproducibility</span>
+<span class="c1"># Fixing random state for reproducibility</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">19680801</span><span class="p">)</span>
 
 <span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
