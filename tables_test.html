@@ -1,0 +1,522 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Tables in Jupyter Book &#8212; My sample book</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Sample Title" href="mymarkdownfile.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">My sample book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Welcome to your Jupyter Book
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown.html">
+   Markdown Files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks.html">
+   Content with notebooks
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="markdown-notebooks.html">
+   Notebooks with MyST Markdown
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mymarkdownfile.html">
+   Sample Title
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Interactive Tables in Jupyter Book
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/tables_test.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftables_test.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/tables_test.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Interactive Tables in Jupyter Book</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="interactive-tables-in-jupyter-book">
+<h1>Interactive Tables in Jupyter Book<a class="headerlink" href="#interactive-tables-in-jupyter-book" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<p>A look at the <code class="docutils literal notranslate"><span class="pre">itables</span></code> package</p>
+<p><a class="reference external" href="https://mwouts.github.io/itables/advanced_parameters.html">Link</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDDEN</span>
+<span class="o">!</span>pip install itables
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: itables in /Users/samworley/opt/anaconda3/lib/python3.7/site-packages (0.4.7)
+Requirement already satisfied: pandas in /Users/samworley/opt/anaconda3/lib/python3.7/site-packages (from itables) (1.3.0)
+Requirement already satisfied: IPython in /Users/samworley/opt/anaconda3/lib/python3.7/site-packages (from itables) (7.22.0)
+Requirement already satisfied: pygments in /Users/samworley/opt/anaconda3/lib/python3.7/site-packages (from IPython-&gt;itables) (2.9.0)
+Requirement already satisfied: pexpect&gt;4.3 in /Users/samworley/opt/anaconda3/lib/python3.7/site-packages (from IPython-&gt;itables) (4.8.0)
+Requirement already satisfied: setuptools&gt;=18.5 in /Users/samworley/opt/anaconda3/lib/python3.7/site-packages (from IPython-&gt;itables) (52.0.0.post20210125)
+Requirement already satisfied: traitlets&gt;=4.2 in /Users/samworley/opt/anaconda3/lib/python3.7/site-packages (from IPython-&gt;itables) (5.0.5)
+Requirement already satisfied: pickleshare in /Users/samworley/opt/anaconda3/lib/python3.7/site-packages (from IPython-&gt;itables) (0.7.5)
+Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in /Users/samworley/opt/anaconda3/lib/python3.7/site-packages (from IPython-&gt;itables) (3.0.17)
+Requirement already satisfied: backcall in /Users/samworley/opt/anaconda3/lib/python3.7/site-packages (from IPython-&gt;itables) (0.2.0)
+Requirement already satisfied: appnope in /Users/samworley/opt/anaconda3/lib/python3.7/site-packages (from IPython-&gt;itables) (0.1.2)
+Requirement already satisfied: jedi&gt;=0.16 in /Users/samworley/opt/anaconda3/lib/python3.7/site-packages (from IPython-&gt;itables) (0.17.0)
+Requirement already satisfied: decorator in /Users/samworley/opt/anaconda3/lib/python3.7/site-packages (from IPython-&gt;itables) (5.0.9)
+Requirement already satisfied: parso&gt;=0.7.0 in /Users/samworley/opt/anaconda3/lib/python3.7/site-packages (from jedi&gt;=0.16-&gt;IPython-&gt;itables) (0.8.2)
+Requirement already satisfied: ptyprocess&gt;=0.5 in /Users/samworley/opt/anaconda3/lib/python3.7/site-packages (from pexpect&gt;4.3-&gt;IPython-&gt;itables) (0.7.0)
+Requirement already satisfied: wcwidth in /Users/samworley/opt/anaconda3/lib/python3.7/site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;IPython-&gt;itables) (0.2.5)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: ipython-genutils in /Users/samworley/opt/anaconda3/lib/python3.7/site-packages (from traitlets&gt;=4.2-&gt;IPython-&gt;itables) (0.2.0)
+Requirement already satisfied: python-dateutil&gt;=2.7.3 in /Users/samworley/opt/anaconda3/lib/python3.7/site-packages (from pandas-&gt;itables) (2.8.1)
+Requirement already satisfied: numpy&gt;=1.17.3 in /Users/samworley/opt/anaconda3/lib/python3.7/site-packages (from pandas-&gt;itables) (1.21.0)
+Requirement already satisfied: pytz&gt;=2017.3 in /Users/samworley/opt/anaconda3/lib/python3.7/site-packages (from pandas-&gt;itables) (2021.1)
+Requirement already satisfied: six&gt;=1.5 in /Users/samworley/opt/anaconda3/lib/python3.7/site-packages (from python-dateutil&gt;=2.7.3-&gt;pandas-&gt;itables) (1.16.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDDEN</span>
+<span class="kn">from</span> <span class="nn">itables</span> <span class="kn">import</span> <span class="n">init_notebook_mode</span>
+<span class="c1">#init_notebook_mode(all_interactive=True)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># HIDE CODE</span>
+<span class="kn">from</span> <span class="nn">itables</span> <span class="kn">import</span> <span class="n">show</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/nytimes/covid-19-data/master/live/us-states.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>date</th>
+      <th>state</th>
+      <th>fips</th>
+      <th>cases</th>
+      <th>deaths</th>
+      <th>confirmed_cases</th>
+      <th>confirmed_deaths</th>
+      <th>probable_cases</th>
+      <th>probable_deaths</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2022-04-15</td>
+      <td>Alabama</td>
+      <td>1</td>
+      <td>1297649</td>
+      <td>19475</td>
+      <td>933560.0</td>
+      <td>14953.0</td>
+      <td>364089.0</td>
+      <td>4522.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2022-04-15</td>
+      <td>Alaska</td>
+      <td>2</td>
+      <td>248375</td>
+      <td>1196</td>
+      <td>0.0</td>
+      <td>1196.0</td>
+      <td>248375.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2022-04-15</td>
+      <td>American Samoa</td>
+      <td>60</td>
+      <td>5517</td>
+      <td>12</td>
+      <td>5517.0</td>
+      <td>12.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2022-04-15</td>
+      <td>Arizona</td>
+      <td>4</td>
+      <td>2016797</td>
+      <td>29823</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2022-04-15</td>
+      <td>Arkansas</td>
+      <td>5</td>
+      <td>834037</td>
+      <td>11332</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>834037.0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>using the <code class="docutils literal notranslate"><span class="pre">show()</span></code> function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">scrollY</span><span class="o">=</span><span class="s2">&quot;400px&quot;</span><span class="p">,</span> <span class="n">scrollCollapse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">paging</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table id="ffd78d07-7373-468b-8ca1-67c7a50cba2c" class="display"style="max-width:100%"><thead>
+    <tr style="text-align: right;">
+
+      <th>date</th>
+      <th>state</th>
+      <th>fips</th>
+      <th>cases</th>
+      <th>deaths</th>
+      <th>confirmed_cases</th>
+      <th>confirmed_deaths</th>
+      <th>probable_cases</th>
+      <th>probable_deaths</th>
+    </tr>
+  </thead><tbody><tr><td>Loading... (need <a href=https://mwouts.github.io/itables/troubleshooting.html>help</a>?)</td></tr></tbody></table>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+<style> table td {
+    text-overflow: ellipsis;
+    overflow: hidden;
+} </style>
+<style> table th {
+    text-overflow: ellipsis;
+    overflow: hidden;
+} </style>
+<script type="module">
+    // Define the table data
+    const data = [["2022-04-15", "Alabama", 1, 1297649, 19475, 933560.0, 14953.0, 364089.0, 4522.0], ["2022-04-15", "Alaska", 2, 248375, 1196, 0.0, 1196.0, 248375.0, 0.0], ["2022-04-15", "American Samoa", 60, 5517, 12, 5517.0, 12.0, 0.0, 0.0], ["2022-04-15", "Arizona", 4, 2016797, 29823, NaN, NaN, NaN, NaN], ["2022-04-15", "Arkansas", 5, 834037, 11332, 0.0, NaN, 834037.0, NaN], ["2022-04-15", "California", 6, 9151205, 89629, 8754835.0, 89358.0, 396370.0, 271.0], ["2022-04-15", "Colorado", 8, 1369106, 12222, NaN, NaN, NaN, NaN], ["2022-04-15", "Connecticut", 9, 744459, 10809, NaN, NaN, NaN, NaN], ["2022-04-15", "Delaware", 10, 259796, 2884, NaN, NaN, NaN, NaN], ["2022-04-15", "District of Columbia", 11, 139160, 1333, 134623.0, 1319.0, 4537.0, 14.0], ["2022-04-15", "Florida", 12, 5875505, 73656, 0.0, NaN, 5875505.0, NaN], ["2022-04-15", "Georgia", 13, 2436297, 36042, 1880089.0, 30421.0, 556208.0, 5621.0], ["2022-04-15", "Guam", 66, 48651, 355, 41022.0, 355.0, 7629.0, 0.0], ["2022-04-15", "Hawaii", 15, 237097, 1387, NaN, NaN, NaN, NaN], ["2022-04-15", "Idaho", 16, 445107, 4914, 348782.0, 4001.0, 96325.0, 913.0], ["2022-04-15", "Illinois", 17, 3097741, 37806, 2608459.0, 33541.0, 489282.0, 4265.0], ["2022-04-15", "Indiana", 18, 1693565, 23509, 1693565.0, 22576.0, 0.0, 933.0], ["2022-04-15", "Iowa", 19, 760377, 9475, 587601.0, NaN, 172776.0, NaN], ["2022-04-15", "Kansas", 20, 772058, 8501, NaN, NaN, NaN, NaN], ["2022-04-15", "Kentucky", 21, 1329565, 15212, NaN, NaN, NaN, NaN], ["2022-04-15", "Louisiana", 22, 1234650, 17194, 889552.0, 14647.0, 345098.0, 2547.0], ["2022-04-15", "Maine", 23, 239130, 2276, 173146.0, 2276.0, 65984.0, 0.0], ["2022-04-15", "Maryland", 24, 1018965, 14395, 1018701.0, 14131.0, 264.0, 264.0], ["2022-04-15", "Massachusetts", 25, 1721642, 20169, 1585176.0, 19052.0, 136466.0, 1117.0], ["2022-04-15", "Michigan", 26, 2395209, 35817, 2085140.0, 32985.0, 310069.0, 2832.0], ["2022-04-15", "Minnesota", 27, 1437016, 12708, 1237968.0, NaN, 199048.0, NaN], ["2022-04-15", "Mississippi", 28, 796262, 12421, 437564.0, 8183.0, 358698.0, 4238.0], ["2022-04-15", "Missouri", 29, 1430223, 20186, 1200619.0, 17087.0, 229604.0, 3099.0], ["2022-04-15", "Montana", 30, 273299, 3260, 273299.0, 3260.0, 0.0, 0.0], ["2022-04-15", "Nebraska", 31, 478419, 4191, 125264.0, 825.0, 353155.0, 3366.0], ["2022-04-15", "Nevada", 32, 715498, 10501, 655728.0, 10501.0, 59770.0, 0.0], ["2022-04-15", "New Hampshire", 33, 305119, 2464, 0.0, NaN, 305119.0, NaN], ["2022-04-15", "New Jersey", 34, 2223788, 33324, 1918216.0, 30310.0, 305572.0, 3014.0], ["2022-04-15", "New Mexico", 35, 519681, 7402, 519681.0, 7402.0, 0.0, 0.0], ["2022-04-15", "New York", 36, 5044079, 67447, 5037713.0, 61941.0, 6366.0, 5506.0], ["2022-04-15", "North Carolina", 37, 2640677, 23344, 72997.0, 299.0, 2567680.0, 23045.0], ["2022-04-15", "North Dakota", 38, 240312, 2304, 179793.0, NaN, 60519.0, NaN], ["2022-04-15", "Northern Mariana Islands", 69, 11203, 34, 11203.0, 34.0, 0.0, 0.0], ["2022-04-15", "Ohio", 39, 2681437, 38266, NaN, NaN, NaN, NaN], ["2022-04-15", "Oklahoma", 40, 1036495, 14166, 0.0, NaN, 1036495.0, NaN], ["2022-04-15", "Oregon", 41, 709125, 7427, 0.0, NaN, 709125.0, NaN], ["2022-04-15", "Pennsylvania", 42, 2793978, 44464, NaN, NaN, NaN, NaN], ["2022-04-15", "Puerto Rico", 72, 524566, 4184, 273575.0, 0.0, 250991.0, 4184.0], ["2022-04-15", "Rhode Island", 44, 365548, 3527, 0.0, NaN, 365548.0, NaN], ["2022-04-15", "South Carolina", 45, 1470597, 17698, 1156057.0, 15082.0, 314540.0, 2616.0], ["2022-04-15", "South Dakota", 46, 237370, 2898, 0.0, NaN, 237370.0, NaN], ["2022-04-15", "Tennessee", 47, 1975364, 25837, 1479910.0, 4018.0, 495454.0, 21819.0], ["2022-04-15", "Texas", 48, 6715742, 87896, 5494839.0, 31131.0, 1220903.0, 56765.0], ["2022-04-15", "Utah", 49, 929587, 4736, 0.0, 4510.0, 929587.0, 226.0], ["2022-04-15", "Vermont", 50, 119339, 623, 0.0, NaN, 119339.0, NaN], ["2022-04-15", "Virginia", 51, 1681729, 19988, NaN, NaN, NaN, NaN], ["2022-04-15", "Virgin Islands", 78, 15872, 111, 15872.0, 111.0, 0.0, 0.0], ["2022-04-15", "Washington", 53, 1472774, 12643, 1256015.0, 3272.0, 216759.0, 9371.0], ["2022-04-15", "West Virginia", 54, 498773, 6791, 395590.0, NaN, 103183.0, NaN], ["2022-04-15", "Wisconsin", 55, 1594304, 14383, 1400731.0, 12854.0, 193573.0, 1529.0], ["2022-04-15", "Wyoming", 56, 156258, 1801, 123253.0, NaN, 33005.0, NaN]];
+
+    if (typeof require === 'undefined') {
+        // TODO: This should become the default (use a simple import)
+        // when the ESM version works independently of whether
+        // require.js is there or not, see
+        // https://datatables.net/forums/discussion/69066/esm-es6-module-support?
+        const {default: $} = await import("https://esm.sh/jquery@3.5.0");
+        const {default: initDataTables} = await import("https://esm.sh/datatables.net@1.11.3?deps=jquery@3.5.0");
+
+        initDataTables();
+
+        // Define the dt_args
+        let dt_args = {"scrollY": "400px", "scrollCollapse": true, "paging": false};
+        dt_args["data"] = data;
+
+        // Display the table
+        $(document).ready(function () {
+            $('#ffd78d07-7373-468b-8ca1-67c7a50cba2c').DataTable(dt_args);
+        });
+    } else {
+        require(["jquery", "datatables"], ($, datatables) => {
+                // Define the dt_args
+                let dt_args = {"scrollY": "400px", "scrollCollapse": true, "paging": false};
+                dt_args["data"] = data;
+
+                // Display the table
+                $(document).ready(function () {
+                    $('#ffd78d07-7373-468b-8ca1-67c7a50cba2c').DataTable(dt_args);
+                });
+            }
+        )
+    }
+</script>
+</div></div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="mymarkdownfile.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Sample Title</p>
+        </div>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By The Jupyter Book Community<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
