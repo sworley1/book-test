@@ -4,8 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Interactive Tables in Jupyter Book &#8212; My sample book</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
@@ -29,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -241,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="interactive-tables-in-jupyter-book">
+  <div class="tex2jax_ignore mathjax_ignore section" id="interactive-tables-in-jupyter-book">
 <h1>Interactive Tables in Jupyter Book<a class="headerlink" href="#interactive-tables-in-jupyter-book" title="Permalink to this headline">¶</a></h1>
 <hr class="docutils" />
 <p>A look at the <code class="docutils literal notranslate"><span class="pre">itables</span></code> package</p>
@@ -258,9 +258,24 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><table id="275c8d09-6776-417e-9a43-f47740562e33" class="display"style="max-width:100%"><thead>
-    <tr style="text-align: right;">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
       <th>date</th>
       <th>state</th>
       <th>fips</th>
@@ -271,53 +286,71 @@ const thebe_selector_output = ".output, .cell_output"
       <th>probable_cases</th>
       <th>probable_deaths</th>
     </tr>
-  </thead><tbody><tr><td>Loading... (need <a href=https://mwouts.github.io/itables/troubleshooting.html>help</a>?)</td></tr></tbody></table>
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
-<style> table td {
-    text-overflow: ellipsis;
-    overflow: hidden;
-} </style>
-<style> table th {
-    text-overflow: ellipsis;
-    overflow: hidden;
-} </style>
-<script type="module">
-    // Define the table data
-    const data = [["2022-04-15", "Alabama", 1, 1297649, 19475, 933560.0, 14953.0, 364089.0, 4522.0], ["2022-04-15", "Alaska", 2, 248375, 1196, 0.0, 1196.0, 248375.0, 0.0], ["2022-04-15", "American Samoa", 60, 5517, 12, 5517.0, 12.0, 0.0, 0.0], ["2022-04-15", "Arizona", 4, 2016797, 29823, NaN, NaN, NaN, NaN], ["2022-04-15", "Arkansas", 5, 834037, 11332, 0.0, NaN, 834037.0, NaN]];
-
-    if (typeof require === 'undefined') {
-        // TODO: This should become the default (use a simple import)
-        // when the ESM version works independently of whether
-        // require.js is there or not, see
-        // https://datatables.net/forums/discussion/69066/esm-es6-module-support?
-        const {default: $} = await import("https://esm.sh/jquery@3.5.0");
-        const {default: initDataTables} = await import("https://esm.sh/datatables.net@1.11.3?deps=jquery@3.5.0");
-
-        initDataTables();
-
-        // Define the dt_args
-        let dt_args = {"paging": false};
-        dt_args["data"] = data;
-
-        // Display the table
-        $(document).ready(function () {
-            $('#275c8d09-6776-417e-9a43-f47740562e33').DataTable(dt_args);
-        });
-    } else {
-        require(["jquery", "datatables"], ($, datatables) => {
-                // Define the dt_args
-                let dt_args = {"paging": false};
-                dt_args["data"] = data;
-
-                // Display the table
-                $(document).ready(function () {
-                    $('#275c8d09-6776-417e-9a43-f47740562e33').DataTable(dt_args);
-                });
-            }
-        )
-    }
-</script>
-</div></div>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2022-04-25</td>
+      <td>Alabama</td>
+      <td>1</td>
+      <td>1299137</td>
+      <td>19541</td>
+      <td>934593.0</td>
+      <td>15008.0</td>
+      <td>364544.0</td>
+      <td>4533.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2022-04-25</td>
+      <td>Alaska</td>
+      <td>2</td>
+      <td>249901</td>
+      <td>1209</td>
+      <td>0.0</td>
+      <td>1209.0</td>
+      <td>249901.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2022-04-25</td>
+      <td>American Samoa</td>
+      <td>60</td>
+      <td>5517</td>
+      <td>12</td>
+      <td>5517.0</td>
+      <td>12.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2022-04-25</td>
+      <td>Arizona</td>
+      <td>4</td>
+      <td>2019174</td>
+      <td>29852</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2022-04-25</td>
+      <td>Arkansas</td>
+      <td>5</td>
+      <td>834995</td>
+      <td>11371</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td>834995.0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>using the <code class="docutils literal notranslate"><span class="pre">show()</span></code> function</p>
 <div class="cell docutils container">
@@ -327,7 +360,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><table id="a47f384f-7a9c-48c7-8136-4d21dee7a684" class="display"style="max-width:100%"><thead>
+<div class="output text_html"><table id="e95fe834-7bb8-4702-b545-53241719884f" class="display"style="max-width:100%"><thead>
     <tr style="text-align: right;">
 
       <th>date</th>
@@ -352,7 +385,7 @@ const thebe_selector_output = ".output, .cell_output"
 } </style>
 <script type="module">
     // Define the table data
-    const data = [["2022-04-15", "Alabama", 1, 1297649, 19475, 933560.0, 14953.0, 364089.0, 4522.0], ["2022-04-15", "Alaska", 2, 248375, 1196, 0.0, 1196.0, 248375.0, 0.0], ["2022-04-15", "American Samoa", 60, 5517, 12, 5517.0, 12.0, 0.0, 0.0], ["2022-04-15", "Arizona", 4, 2016797, 29823, NaN, NaN, NaN, NaN], ["2022-04-15", "Arkansas", 5, 834037, 11332, 0.0, NaN, 834037.0, NaN], ["2022-04-15", "California", 6, 9151205, 89629, 8754835.0, 89358.0, 396370.0, 271.0], ["2022-04-15", "Colorado", 8, 1369106, 12222, NaN, NaN, NaN, NaN], ["2022-04-15", "Connecticut", 9, 744459, 10809, NaN, NaN, NaN, NaN], ["2022-04-15", "Delaware", 10, 259796, 2884, NaN, NaN, NaN, NaN], ["2022-04-15", "District of Columbia", 11, 139160, 1333, 134623.0, 1319.0, 4537.0, 14.0], ["2022-04-15", "Florida", 12, 5875505, 73656, 0.0, NaN, 5875505.0, NaN], ["2022-04-15", "Georgia", 13, 2436297, 36042, 1880089.0, 30421.0, 556208.0, 5621.0], ["2022-04-15", "Guam", 66, 48651, 355, 41022.0, 355.0, 7629.0, 0.0], ["2022-04-15", "Hawaii", 15, 237097, 1387, NaN, NaN, NaN, NaN], ["2022-04-15", "Idaho", 16, 445107, 4914, 348782.0, 4001.0, 96325.0, 913.0], ["2022-04-15", "Illinois", 17, 3097741, 37806, 2608459.0, 33541.0, 489282.0, 4265.0], ["2022-04-15", "Indiana", 18, 1693565, 23509, 1693565.0, 22576.0, 0.0, 933.0], ["2022-04-15", "Iowa", 19, 760377, 9475, 587601.0, NaN, 172776.0, NaN], ["2022-04-15", "Kansas", 20, 772058, 8501, NaN, NaN, NaN, NaN], ["2022-04-15", "Kentucky", 21, 1329565, 15212, NaN, NaN, NaN, NaN], ["2022-04-15", "Louisiana", 22, 1234650, 17194, 889552.0, 14647.0, 345098.0, 2547.0], ["2022-04-15", "Maine", 23, 239130, 2276, 173146.0, 2276.0, 65984.0, 0.0], ["2022-04-15", "Maryland", 24, 1018965, 14395, 1018701.0, 14131.0, 264.0, 264.0], ["2022-04-15", "Massachusetts", 25, 1721642, 20169, 1585176.0, 19052.0, 136466.0, 1117.0], ["2022-04-15", "Michigan", 26, 2395209, 35817, 2085140.0, 32985.0, 310069.0, 2832.0], ["2022-04-15", "Minnesota", 27, 1437016, 12708, 1237968.0, NaN, 199048.0, NaN], ["2022-04-15", "Mississippi", 28, 796262, 12421, 437564.0, 8183.0, 358698.0, 4238.0], ["2022-04-15", "Missouri", 29, 1430223, 20186, 1200619.0, 17087.0, 229604.0, 3099.0], ["2022-04-15", "Montana", 30, 273299, 3260, 273299.0, 3260.0, 0.0, 0.0], ["2022-04-15", "Nebraska", 31, 478419, 4191, 125264.0, 825.0, 353155.0, 3366.0], ["2022-04-15", "Nevada", 32, 715498, 10501, 655728.0, 10501.0, 59770.0, 0.0], ["2022-04-15", "New Hampshire", 33, 305119, 2464, 0.0, NaN, 305119.0, NaN], ["2022-04-15", "New Jersey", 34, 2223788, 33324, 1918216.0, 30310.0, 305572.0, 3014.0], ["2022-04-15", "New Mexico", 35, 519681, 7402, 519681.0, 7402.0, 0.0, 0.0], ["2022-04-15", "New York", 36, 5044079, 67447, 5037713.0, 61941.0, 6366.0, 5506.0], ["2022-04-15", "North Carolina", 37, 2640677, 23344, 72997.0, 299.0, 2567680.0, 23045.0], ["2022-04-15", "North Dakota", 38, 240312, 2304, 179793.0, NaN, 60519.0, NaN], ["2022-04-15", "Northern Mariana Islands", 69, 11203, 34, 11203.0, 34.0, 0.0, 0.0], ["2022-04-15", "Ohio", 39, 2681437, 38266, NaN, NaN, NaN, NaN], ["2022-04-15", "Oklahoma", 40, 1036495, 14166, 0.0, NaN, 1036495.0, NaN], ["2022-04-15", "Oregon", 41, 709125, 7427, 0.0, NaN, 709125.0, NaN], ["2022-04-15", "Pennsylvania", 42, 2793978, 44464, NaN, NaN, NaN, NaN], ["2022-04-15", "Puerto Rico", 72, 524566, 4184, 273575.0, 0.0, 250991.0, 4184.0], ["2022-04-15", "Rhode Island", 44, 365548, 3527, 0.0, NaN, 365548.0, NaN], ["2022-04-15", "South Carolina", 45, 1470597, 17698, 1156057.0, 15082.0, 314540.0, 2616.0], ["2022-04-15", "South Dakota", 46, 237370, 2898, 0.0, NaN, 237370.0, NaN], ["2022-04-15", "Tennessee", 47, 1975364, 25837, 1479910.0, 4018.0, 495454.0, 21819.0], ["2022-04-15", "Texas", 48, 6715742, 87896, 5494839.0, 31131.0, 1220903.0, 56765.0], ["2022-04-15", "Utah", 49, 929587, 4736, 0.0, 4510.0, 929587.0, 226.0], ["2022-04-15", "Vermont", 50, 119339, 623, 0.0, NaN, 119339.0, NaN], ["2022-04-15", "Virginia", 51, 1681729, 19988, NaN, NaN, NaN, NaN], ["2022-04-15", "Virgin Islands", 78, 15872, 111, 15872.0, 111.0, 0.0, 0.0], ["2022-04-15", "Washington", 53, 1472774, 12643, 1256015.0, 3272.0, 216759.0, 9371.0], ["2022-04-15", "West Virginia", 54, 498773, 6791, 395590.0, NaN, 103183.0, NaN], ["2022-04-15", "Wisconsin", 55, 1594304, 14383, 1400731.0, 12854.0, 193573.0, 1529.0], ["2022-04-15", "Wyoming", 56, 156258, 1801, 123253.0, NaN, 33005.0, NaN]];
+    const data = [["2022-04-25", "Alabama", 1, 1299137, 19541, 934593.0, 15008.0, 364544.0, 4533.0], ["2022-04-25", "Alaska", 2, 249901, 1209, 0.0, 1209.0, 249901.0, 0.0], ["2022-04-25", "American Samoa", 60, 5517, 12, 5517.0, 12.0, 0.0, 0.0], ["2022-04-25", "Arizona", 4, 2019174, 29852, NaN, NaN, NaN, NaN], ["2022-04-25", "Arkansas", 5, 834995, 11371, 0.0, NaN, 834995.0, NaN], ["2022-04-25", "California", 6, 9193232, 90093, 8789657.0, 89827.0, 403575.0, 266.0], ["2022-04-25", "Colorado", 8, 1381450, 12293, NaN, NaN, NaN, NaN], ["2022-04-25", "Connecticut", 9, 751810, 10834, NaN, NaN, NaN, NaN], ["2022-04-25", "Delaware", 10, 261399, 2905, NaN, NaN, NaN, NaN], ["2022-04-25", "District of Columbia", 11, 141355, 1335, 134623.0, 1319.0, 6732.0, 16.0], ["2022-04-25", "Florida", 12, 5899188, 73830, 0.0, NaN, 5899188.0, NaN], ["2022-04-25", "Georgia", 13, 2439765, 36217, 1882519.0, 30517.0, 557246.0, 5700.0], ["2022-04-25", "Guam", 66, 48913, 355, 41340.0, 355.0, 7573.0, 0.0], ["2022-04-25", "Hawaii", 15, 238763, 1404, NaN, NaN, NaN, NaN], ["2022-04-25", "Idaho", 16, 445646, 4925, 349146.0, 4011.0, 96500.0, 914.0], ["2022-04-25", "Illinois", 17, 3119711, 37859, 2637124.0, 33605.0, 482587.0, 4254.0], ["2022-04-25", "Indiana", 18, 1696759, 23535, 1696759.0, 22609.0, 0.0, 926.0], ["2022-04-25", "Iowa", 19, 762036, 9510, 588390.0, NaN, 173646.0, NaN], ["2022-04-25", "Kansas", 20, 774680, 8597, NaN, NaN, NaN, NaN], ["2022-04-25", "Kentucky", 21, 1333472, 15322, NaN, NaN, NaN, NaN], ["2022-04-25", "Louisiana", 22, 1236111, 17223, 890470.0, 14666.0, 345641.0, 2557.0], ["2022-04-25", "Maine", 23, 242033, 2280, 175297.0, 2280.0, 66736.0, 0.0], ["2022-04-25", "Maryland", 24, 1025184, 14422, 1024920.0, 14158.0, 264.0, 264.0], ["2022-04-25", "Massachusetts", 25, 1738231, 20222, 1600844.0, 19100.0, 137387.0, 1122.0], ["2022-04-25", "Michigan", 26, 2411464, 35935, 2093825.0, 33052.0, 317639.0, 2883.0], ["2022-04-25", "Minnesota", 27, 1444119, 12752, 1243857.0, NaN, 200262.0, NaN], ["2022-04-25", "Mississippi", 28, 796840, 12436, 437825.0, 8194.0, 359015.0, 4242.0], ["2022-04-25", "Missouri", 29, 1431774, 20192, 1202179.0, 17096.0, 229595.0, 3096.0], ["2022-04-25", "Montana", 30, 273733, 3262, 273733.0, 3262.0, 0.0, 0.0], ["2022-04-25", "Nebraska", 31, 479181, 4197, 125457.0, 826.0, 353724.0, 3371.0], ["2022-04-25", "Nevada", 32, 717368, 10728, 656787.0, 10684.0, 60581.0, 44.0], ["2022-04-25", "New Hampshire", 33, 307528, 2475, 0.0, NaN, 307528.0, NaN], ["2022-04-25", "New Jersey", 34, 2244919, 33381, 1935665.0, 30363.0, 309254.0, 3018.0], ["2022-04-25", "New Mexico", 35, 521018, 7444, 521018.0, 7444.0, 0.0, 0.0], ["2022-04-25", "New York", 36, 5104382, 67572, 5101009.0, 62065.0, 3373.0, 5507.0], ["2022-04-25", "North Carolina", 37, 2649561, 23373, 74025.0, 299.0, 2575536.0, 23074.0], ["2022-04-25", "North Dakota", 38, 240713, 2308, 179793.0, NaN, 60920.0, NaN], ["2022-04-25", "Northern Mariana Islands", 69, 11221, 34, 11221.0, 34.0, 0.0, 0.0], ["2022-04-25", "Ohio", 39, 2688327, 38360, NaN, NaN, NaN, NaN], ["2022-04-25", "Oklahoma", 40, 1039415, 14219, 0.0, NaN, 1039415.0, NaN], ["2022-04-25", "Oregon", 41, 714346, 7478, 0.0, NaN, 714346.0, NaN], ["2022-04-25", "Pennsylvania", 42, 2808171, 44608, NaN, NaN, NaN, NaN], ["2022-04-25", "Puerto Rico", 72, 550227, 4190, 282232.0, 0.0, 267995.0, 4190.0], ["2022-04-25", "Rhode Island", 44, 368246, 3532, 0.0, NaN, 368246.0, NaN], ["2022-04-25", "South Carolina", 45, 1472093, 17734, 1157052.0, 15113.0, 315041.0, 2621.0], ["2022-04-25", "South Dakota", 46, 237535, 2901, 0.0, NaN, 237535.0, NaN], ["2022-04-25", "Tennessee", 47, 1978688, 25872, 1481494.0, 4025.0, 497194.0, 21847.0], ["2022-04-25", "Texas", 48, 6737738, 88210, 5508393.0, 30751.0, 1229345.0, 57459.0], ["2022-04-25", "Utah", 49, 930785, 4740, 0.0, 4513.0, 930785.0, 227.0], ["2022-04-25", "Vermont", 50, 121534, 629, 0.0, NaN, 121534.0, NaN], ["2022-04-25", "Virginia", 51, 1691268, 20149, NaN, NaN, NaN, NaN], ["2022-04-25", "Virgin Islands", 78, 16091, 111, 16091.0, 111.0, 0.0, 0.0], ["2022-04-25", "Washington", 53, 1484441, 12708, 1265838.0, 3288.0, 218603.0, 9420.0], ["2022-04-25", "West Virginia", 54, 499796, 6823, 396265.0, NaN, 103531.0, NaN], ["2022-04-25", "Wisconsin", 55, 1601656, 14403, 1407481.0, 12872.0, 194175.0, 1531.0], ["2022-04-25", "Wyoming", 56, 156392, 1807, 123361.0, NaN, 33031.0, NaN]];
 
     if (typeof require === 'undefined') {
         // TODO: This should become the default (use a simple import)
@@ -370,7 +403,7 @@ const thebe_selector_output = ".output, .cell_output"
 
         // Display the table
         $(document).ready(function () {
-            $('#a47f384f-7a9c-48c7-8136-4d21dee7a684').DataTable(dt_args);
+            $('#e95fe834-7bb8-4702-b545-53241719884f').DataTable(dt_args);
         });
     } else {
         require(["jquery", "datatables"], ($, datatables) => {
@@ -380,7 +413,7 @@ const thebe_selector_output = ".output, .cell_output"
 
                 // Display the table
                 $(document).ready(function () {
-                    $('#a47f384f-7a9c-48c7-8136-4d21dee7a684').DataTable(dt_args);
+                    $('#e95fe834-7bb8-4702-b545-53241719884f').DataTable(dt_args);
                 });
             }
         )
@@ -388,7 +421,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
 </div></div>
 </div>
-</section>
+</div>
 
     <script type="text/x-thebe-config">
     {
