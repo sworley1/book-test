@@ -7,4 +7,6 @@ chapters:
 - file: markdown
 - file: notebooks
 - file: markdown-notebooks
-- file: mymarkdownfile.md
+- file: mymarkdownfile
+- file: tables_test
+- file: Content_Types
