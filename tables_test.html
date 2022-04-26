@@ -54,6 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Extra Content Types" href="Content_Types.html" />
     <link rel="prev" title="Sample Title" href="mymarkdownfile.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -122,6 +123,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Interactive Tables in Jupyter Book
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Content_Types.html">
+   Extra Content Types
   </a>
  </li>
 </ul>
@@ -360,7 +366,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><table id="30e921da-c4e0-41c6-9bae-2657f5a16a8a" class="display"style="max-width:100%"><thead>
+<div class="output text_html"><table id="d67d2885-f5d9-4ee2-a114-69fa05cf74bc" class="display"style="max-width:100%"><thead>
     <tr style="text-align: right;">
 
       <th>date</th>
@@ -403,7 +409,7 @@ const thebe_selector_output = ".output, .cell_output"
 
         // Display the table
         $(document).ready(function () {
-            $('#30e921da-c4e0-41c6-9bae-2657f5a16a8a').DataTable(dt_args);
+            $('#d67d2885-f5d9-4ee2-a114-69fa05cf74bc').DataTable(dt_args);
         });
     } else {
         require(["jquery", "datatables"], ($, datatables) => {
@@ -413,7 +419,7 @@ const thebe_selector_output = ".output, .cell_output"
 
                 // Display the table
                 $(document).ready(function () {
-                    $('#30e921da-c4e0-41c6-9bae-2657f5a16a8a').DataTable(dt_args);
+                    $('#d67d2885-f5d9-4ee2-a114-69fa05cf74bc').DataTable(dt_args);
                 });
             }
         )
@@ -454,6 +460,13 @@ const thebe_selector_output = ".output, .cell_output"
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title">Sample Title</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="Content_Types.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Extra Content Types</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             
