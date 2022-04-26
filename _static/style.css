@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,600;1,400&display=swap');
+
+
 p {
-    font-family: Asap; color: #5D576B;
+    font-family: 'Raleway', sans-serif ; color: #5D576B;
 }
 
 a {
-    font-family: Asap; color:#5D576B;
+    font-family: 'Raleway', sans-serif; color:#9BC1BC;
 }
 
 h1, h2, h3, h4 {
