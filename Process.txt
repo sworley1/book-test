@@ -6,3 +6,8 @@ cd mynewbook/
 
 ghp-import -n -p -f _build/html # this should build the book and publish to github pages
 
+[main 1483201] check out that helper file
+ 4 files changed, 38 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 helper.py
+ create mode 100644 makefile
