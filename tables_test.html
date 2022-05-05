@@ -366,7 +366,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><table id="122b9e85-a60b-4f71-9277-b70461f3f1d4" class="display"style="max-width:100%"><thead>
+<div class="output text_html"><table id="e2518f8b-6c63-4d41-bf32-e6a01377e7b9" class="display"style="max-width:100%"><thead>
     <tr style="text-align: right;">
 
       <th>date</th>
@@ -409,7 +409,7 @@ const thebe_selector_output = ".output, .cell_output"
 
         // Display the table
         $(document).ready(function () {
-            $('#122b9e85-a60b-4f71-9277-b70461f3f1d4').DataTable(dt_args);
+            $('#e2518f8b-6c63-4d41-bf32-e6a01377e7b9').DataTable(dt_args);
         });
     } else {
         require(["jquery", "datatables"], ($, datatables) => {
@@ -419,13 +419,82 @@ const thebe_selector_output = ".output, .cell_output"
 
                 // Display the table
                 $(document).ready(function () {
-                    $('#122b9e85-a60b-4f71-9277-b70461f3f1d4').DataTable(dt_args);
+                    $('#e2518f8b-6c63-4d41-bf32-e6a01377e7b9').DataTable(dt_args);
                 });
             }
         )
     }
 </script>
 </div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">(</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;#56bf84&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s2">&quot;state:N&quot;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="s1">&#39;-x&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
+    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s2">&quot;confirmed_cases:Q&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Confirmed Cases&quot;</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Number of Confirmed Cases by State&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span>
+    <span class="n">background</span><span class="o">=</span><span class="s2">&quot;#754861&quot;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s2">&quot;Asap&quot;</span><span class="p">,</span> 
+<span class="p">)</span><span class="o">.</span><span class="n">configure_title</span><span class="p">(</span><span class="n">fontSize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="s2">&quot;Asap&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">configure_axis</span><span class="p">(</span>
+    <span class="n">labelColor</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">titleColor</span><span class="o">=</span><span class="s2">&quot;white&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<div id="altair-viz-934f7f4136084345a8054926c4ac3a9f"></div>
+<script type="text/javascript">
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-934f7f4136084345a8054926c4ac3a9f") {
+      outputDiv = document.getElementById("altair-viz-934f7f4136084345a8054926c4ac3a9f");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.8.1?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function loadScript(lib) {
+      return new Promise(function(resolve, reject) {
+        var s = document.createElement('script');
+        s.src = paths[lib];
+        s.async = true;
+        s.onload = () => resolve(paths[lib]);
+        s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+        document.getElementsByTagName("head")[0].appendChild(s);
+      });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else if (typeof vegaEmbed === "function") {
+      displayChart(vegaEmbed);
+    } else {
+      loadScript("vega")
+        .then(() => loadScript("vega-lite"))
+        .then(() => loadScript("vega-embed"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"labelColor": "white", "titleColor": "white"}, "background": "#754861", "font": "Asap", "title": {"color": "white", "font": "Asap", "fontSize": 16}}, "data": {"name": "data-55eb03f85b6baf4c2a42a974b23d2796"}, "mark": {"type": "bar", "color": "#56bf84"}, "encoding": {"x": {"type": "quantitative", "field": "confirmed_cases", "title": "Confirmed Cases"}, "y": {"type": "nominal", "field": "state", "sort": "-x", "title": null}}, "title": "Number of Confirmed Cases by State", "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-55eb03f85b6baf4c2a42a974b23d2796": [{"date": "2022-05-04", "state": "Alabama", "fips": 1, "cases": 1301805, "deaths": 19590, "confirmed_cases": 936444.0, "confirmed_deaths": 15047.0, "probable_cases": 365361.0, "probable_deaths": 4543.0}, {"date": "2022-05-04", "state": "Alaska", "fips": 2, "cases": 252847, "deaths": 1213, "confirmed_cases": 0.0, "confirmed_deaths": 1213.0, "probable_cases": 252847.0, "probable_deaths": 0.0}, {"date": "2022-05-04", "state": "American Samoa", "fips": 60, "cases": 5793, "deaths": 26, "confirmed_cases": 5793.0, "confirmed_deaths": 26.0, "probable_cases": 0.0, "probable_deaths": 0.0}, {"date": "2022-05-04", "state": "Arizona", "fips": 4, "cases": 2025435, "deaths": 30189, "confirmed_cases": null, "confirmed_deaths": null, "probable_cases": null, "probable_deaths": null}, {"date": "2022-05-04", "state": "Arkansas", "fips": 5, "cases": 836343, "deaths": 11403, "confirmed_cases": 0.0, "confirmed_deaths": null, "probable_cases": 836343.0, "probable_deaths": null}, {"date": "2022-05-04", "state": "California", "fips": 6, "cases": 9265196, "deaths": 90571, "confirmed_cases": 8856963.0, "confirmed_deaths": 90302.0, "probable_cases": 408233.0, "probable_deaths": 269.0}, {"date": "2022-05-04", "state": "Colorado", "fips": 8, "cases": 1394135, "deaths": 12671, "confirmed_cases": null, "confirmed_deaths": null, "probable_cases": null, "probable_deaths": null}, {"date": "2022-05-04", "state": "Connecticut", "fips": 9, "cases": 763149, "deaths": 10858, "confirmed_cases": null, "confirmed_deaths": null, "probable_cases": null, "probable_deaths": null}, {"date": "2022-05-04", "state": "Delaware", "fips": 10, "cases": 263479, "deaths": 2919, "confirmed_cases": null, "confirmed_deaths": null, "probable_cases": null, "probable_deaths": null}, {"date": "2022-05-04", "state": "District of Columbia", "fips": 11, "cases": 141943, "deaths": 1340, "confirmed_cases": 134623.0, "confirmed_deaths": 1319.0, "probable_cases": 7320.0, "probable_deaths": 21.0}, {"date": "2022-05-04", "state": "Florida", "fips": 12, "cases": 5946185, "deaths": 74008, "confirmed_cases": 0.0, "confirmed_deaths": null, "probable_cases": 5946185.0, "probable_deaths": null}, {"date": "2022-05-04", "state": "Georgia", "fips": 13, "cases": 2452012, "deaths": 36498, "confirmed_cases": 1891430.0, "confirmed_deaths": 30653.0, "probable_cases": 560582.0, "probable_deaths": 5845.0}, {"date": "2022-05-04", "state": "Guam", "fips": 66, "cases": 49251, "deaths": 354, "confirmed_cases": 41526.0, "confirmed_deaths": 354.0, "probable_cases": 7725.0, "probable_deaths": 0.0}, {"date": "2022-05-04", "state": "Hawaii", "fips": 15, "cases": 246110, "deaths": 1425, "confirmed_cases": null, "confirmed_deaths": null, "probable_cases": null, "probable_deaths": null}, {"date": "2022-05-04", "state": "Idaho", "fips": 16, "cases": 446339, "deaths": 4930, "confirmed_cases": 349650.0, "confirmed_deaths": 4014.0, "probable_cases": 96689.0, "probable_deaths": 916.0}, {"date": "2022-05-04", "state": "Illinois", "fips": 17, "cases": 3163121, "deaths": 37934, "confirmed_cases": 2674042.0, "confirmed_deaths": 33680.0, "probable_cases": 489079.0, "probable_deaths": 4254.0}, {"date": "2022-05-04", "state": "Indiana", "fips": 18, "cases": 1705394, "deaths": 23591, "confirmed_cases": 1705394.0, "confirmed_deaths": 22650.0, "probable_cases": 0.0, "probable_deaths": 941.0}, {"date": "2022-05-04", "state": "Iowa", "fips": 19, "cases": 765186, "deaths": 9529, "confirmed_cases": 589635.0, "confirmed_deaths": null, "probable_cases": 175551.0, "probable_deaths": null}, {"date": "2022-05-04", "state": "Kansas", "fips": 20, "cases": 776919, "deaths": 8635, "confirmed_cases": null, "confirmed_deaths": null, "probable_cases": null, "probable_deaths": null}, {"date": "2022-05-04", "state": "Kentucky", "fips": 21, "cases": 1339678, "deaths": 15571, "confirmed_cases": null, "confirmed_deaths": null, "probable_cases": null, "probable_deaths": null}, {"date": "2022-05-04", "state": "Louisiana", "fips": 22, "cases": 1239469, "deaths": 17270, "confirmed_cases": 892745.0, "confirmed_deaths": 14693.0, "probable_cases": 346724.0, "probable_deaths": 2577.0}, {"date": "2022-05-04", "state": "Maine", "fips": 23, "cases": 248099, "deaths": 2296, "confirmed_cases": 179717.0, "confirmed_deaths": 2296.0, "probable_cases": 68382.0, "probable_deaths": 0.0}, {"date": "2022-05-04", "state": "Maryland", "fips": 24, "cases": 1036603, "deaths": 14480, "confirmed_cases": 1036338.0, "confirmed_deaths": 14215.0, "probable_cases": 265.0, "probable_deaths": 265.0}, {"date": "2022-05-04", "state": "Massachusetts", "fips": 25, "cases": 1770301, "deaths": 20303, "confirmed_cases": 1629932.0, "confirmed_deaths": 19168.0, "probable_cases": 140369.0, "probable_deaths": 1135.0}, {"date": "2022-05-04", "state": "Michigan", "fips": 26, "cases": 2438988, "deaths": 36023, "confirmed_cases": 2122010.0, "confirmed_deaths": 33161.0, "probable_cases": 316978.0, "probable_deaths": 2862.0}, {"date": "2022-05-04", "state": "Minnesota", "fips": 27, "cases": 1459625, "deaths": 12795, "confirmed_cases": 1256866.0, "confirmed_deaths": null, "probable_cases": 202759.0, "probable_deaths": null}, {"date": "2022-05-04", "state": "Mississippi", "fips": 28, "cases": 798283, "deaths": 12450, "confirmed_cases": 438516.0, "confirmed_deaths": 8201.0, "probable_cases": 359767.0, "probable_deaths": 4249.0}, {"date": "2022-05-04", "state": "Missouri", "fips": 29, "cases": 1436092, "deaths": 20226, "confirmed_cases": 1206551.0, "confirmed_deaths": 17131.0, "probable_cases": 229541.0, "probable_deaths": 3095.0}, {"date": "2022-05-04", "state": "Montana", "fips": 30, "cases": 274627, "deaths": 3375, "confirmed_cases": 274627.0, "confirmed_deaths": 3375.0, "probable_cases": 0.0, "probable_deaths": 0.0}, {"date": "2022-05-04", "state": "Nebraska", "fips": 31, "cases": 480586, "deaths": 4215, "confirmed_cases": 125959.0, "confirmed_deaths": 837.0, "probable_cases": 354627.0, "probable_deaths": 3378.0}, {"date": "2022-05-04", "state": "Nevada", "fips": 32, "cases": 720739, "deaths": 10780, "confirmed_cases": 660688.0, "confirmed_deaths": 10780.0, "probable_cases": 60051.0, "probable_deaths": 0.0}, {"date": "2022-05-04", "state": "New Hampshire", "fips": 33, "cases": 312161, "deaths": 2487, "confirmed_cases": 0.0, "confirmed_deaths": null, "probable_cases": 312161.0, "probable_deaths": null}, {"date": "2022-05-04", "state": "New Jersey", "fips": 34, "cases": 2273050, "deaths": 33467, "confirmed_cases": 1957938.0, "confirmed_deaths": 30421.0, "probable_cases": 315112.0, "probable_deaths": 3046.0}, {"date": "2022-05-04", "state": "New Mexico", "fips": 35, "cases": 523268, "deaths": 7538, "confirmed_cases": 523268.0, "confirmed_deaths": 7538.0, "probable_cases": 0.0, "probable_deaths": 0.0}, {"date": "2022-05-04", "state": "New York", "fips": 36, "cases": 5180822, "deaths": 67745, "confirmed_cases": 5171922.0, "confirmed_deaths": 62233.0, "probable_cases": 8900.0, "probable_deaths": 5512.0}, {"date": "2022-05-04", "state": "North Carolina", "fips": 37, "cases": 2675130, "deaths": 24587, "confirmed_cases": 75558.0, "confirmed_deaths": 299.0, "probable_cases": 2599572.0, "probable_deaths": 24288.0}, {"date": "2022-05-04", "state": "North Dakota", "fips": 38, "cases": 241385, "deaths": 2315, "confirmed_cases": 179793.0, "confirmed_deaths": null, "probable_cases": 61592.0, "probable_deaths": null}, {"date": "2022-05-04", "state": "Northern Mariana Islands", "fips": 69, "cases": 11263, "deaths": 34, "confirmed_cases": 11263.0, "confirmed_deaths": 34.0, "probable_cases": 0.0, "probable_deaths": 0.0}, {"date": "2022-05-04", "state": "Ohio", "fips": 39, "cases": 2697058, "deaths": 38428, "confirmed_cases": null, "confirmed_deaths": null, "probable_cases": null, "probable_deaths": null}, {"date": "2022-05-04", "state": "Oklahoma", "fips": 40, "cases": 1041397, "deaths": 14271, "confirmed_cases": 0.0, "confirmed_deaths": null, "probable_cases": 1041397.0, "probable_deaths": null}, {"date": "2022-05-04", "state": "Oregon", "fips": 41, "cases": 726612, "deaths": 7519, "confirmed_cases": 0.0, "confirmed_deaths": null, "probable_cases": 726612.0, "probable_deaths": null}, {"date": "2022-05-04", "state": "Pennsylvania", "fips": 42, "cases": 2827882, "deaths": 44733, "confirmed_cases": null, "confirmed_deaths": null, "probable_cases": null, "probable_deaths": null}, {"date": "2022-05-04", "state": "Puerto Rico", "fips": 72, "cases": 583847, "deaths": 4217, "confirmed_cases": 293441.0, "confirmed_deaths": 0.0, "probable_cases": 290406.0, "probable_deaths": 4217.0}, {"date": "2022-05-04", "state": "Rhode Island", "fips": 44, "cases": 374181, "deaths": 3541, "confirmed_cases": 0.0, "confirmed_deaths": null, "probable_cases": 374181.0, "probable_deaths": null}, {"date": "2022-05-04", "state": "South Carolina", "fips": 45, "cases": 1477345, "deaths": 17847, "confirmed_cases": 1160735.0, "confirmed_deaths": 15209.0, "probable_cases": 316610.0, "probable_deaths": 2638.0}, {"date": "2022-05-04", "state": "South Dakota", "fips": 46, "cases": 238185, "deaths": 2915, "confirmed_cases": 0.0, "confirmed_deaths": null, "probable_cases": 238185.0, "probable_deaths": null}, {"date": "2022-05-04", "state": "Tennessee", "fips": 47, "cases": 1983580, "deaths": 25922, "confirmed_cases": 1485437.0, "confirmed_deaths": 4031.0, "probable_cases": 498143.0, "probable_deaths": 21891.0}, {"date": "2022-05-04", "state": "Texas", "fips": 48, "cases": 6761264, "deaths": 88334, "confirmed_cases": 5523583.0, "confirmed_deaths": 31407.0, "probable_cases": 1237681.0, "probable_deaths": 56927.0}, {"date": "2022-05-04", "state": "Utah", "fips": 49, "cases": 932480, "deaths": 4747, "confirmed_cases": 0.0, "confirmed_deaths": 4520.0, "probable_cases": 932480.0, "probable_deaths": 227.0}, {"date": "2022-05-04", "state": "Vermont", "fips": 50, "cases": 125347, "deaths": 639, "confirmed_cases": 0.0, "confirmed_deaths": null, "probable_cases": 125347.0, "probable_deaths": null}, {"date": "2022-05-04", "state": "Virginia", "fips": 51, "cases": 1710272, "deaths": 20256, "confirmed_cases": null, "confirmed_deaths": null, "probable_cases": null, "probable_deaths": null}, {"date": "2022-05-04", "state": "Virgin Islands", "fips": 78, "cases": 16481, "deaths": 111, "confirmed_cases": 16481.0, "confirmed_deaths": 111.0, "probable_cases": 0.0, "probable_deaths": 0.0}, {"date": "2022-05-04", "state": "Washington", "fips": 53, "cases": 1510642, "deaths": 12759, "confirmed_cases": 1287965.0, "confirmed_deaths": 3305.0, "probable_cases": 222677.0, "probable_deaths": 9454.0}, {"date": "2022-05-04", "state": "West Virginia", "fips": 54, "cases": 502192, "deaths": 6872, "confirmed_cases": 397869.0, "confirmed_deaths": null, "probable_cases": 104323.0, "probable_deaths": null}, {"date": "2022-05-04", "state": "Wisconsin", "fips": 55, "cases": 1618029, "deaths": 14442, "confirmed_cases": 1422317.0, "confirmed_deaths": 12902.0, "probable_cases": 195712.0, "probable_deaths": 1540.0}, {"date": "2022-05-04", "state": "Wyoming", "fips": 56, "cases": 156745, "deaths": 1814, "confirmed_cases": 123664.0, "confirmed_deaths": null, "probable_cases": 33081.0, "probable_deaths": null}]}}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
 </div>
 
