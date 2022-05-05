@@ -12,3 +12,7 @@ a {
 h1, h2, h3, h4 {
     font-family: 'Raleway', sans-serif ; color: orange;
 }
+
+body {
+    background-color: #fff3b0;
+}
